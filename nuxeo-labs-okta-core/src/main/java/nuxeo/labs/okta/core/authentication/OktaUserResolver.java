@@ -1,4 +1,4 @@
-package nuxeo.labs.okta.core;
+package nuxeo.labs.okta.core.authentication;
 
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.platform.auth.saml.SAMLCredential;
