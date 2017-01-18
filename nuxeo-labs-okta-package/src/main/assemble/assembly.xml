@@ -47,7 +47,8 @@
           <artifact groupId="nuxeo.labs.okta*"/>
         </includes>
         <excludes>
-          <artifact groupId="${maven.project.groupId}" artifactId="${maven.project.artifactId}" version="${maven.project.version}" type="${maven.project.packaging}"/>
+          <artifact groupId="${maven.project.groupId}" artifactId="${maven.project.artifactId}"
+                    version="${maven.project.version}" type="${maven.project.packaging}"/>
           <artifact scope="test"/>
           <artifact scope="provided"/>
           <artifact type="pom"/>
@@ -81,13 +82,13 @@
 
     <!-- Your MP only needs to include files not already provided by the base distribution -->
     <nx:zipdiff
-      file1="${outdir}/nxr-${maven.project.version}.zip"
-      file2="${outdir}/nuxeo-nxr-server-${nuxeo.distribution.version}.zip"
-      includesfile="${outdir}/includes"
-      excludesfile="${outdir}/excludesfile"
-      patternsetid="sample.versus.cap"
-      ignoreContent="false"
-      ignoreContentPattern=".*\.jar$"></nx:zipdiff>
+        file1="${outdir}/nxr-${maven.project.version}.zip"
+        file2="${outdir}/nuxeo-nxr-server-${nuxeo.distribution.version}.zip"
+        includesfile="${outdir}/includes"
+        excludesfile="${outdir}/excludesfile"
+        patternsetid="sample.versus.cap"
+        ignoreContent="false"
+        ignoreContentPattern=".*\.jar$"></nx:zipdiff>
     <unzip src="${outdir}/nxr-${maven.project.version}.zip" dest="${outdir}/marketplace/install">
       <patternset refid="sample.versus.cap"/>
     </unzip>
@@ -114,8 +115,8 @@
     </if>
 
     <var
-      name="install.properties"
-      value="${line.separator}
+        name="install.properties"
+        value="${line.separator}
   &lt;copy file=&quot;${package.root}/install/artifacts.properties&quot;${line.separator}
     todir=&quot;${env.server.home}/sdk&quot; overwrite=&quot;true&quot; /&gt;${line.separator}
   &lt;copy file=&quot;${package.root}/install/test-artifacts.properties&quot;${line.separator}
@@ -126,8 +127,8 @@
       <available file="${outdir}/marketplace/install/templates"/>
       <then>
         <var
-          name="install.templates"
-          value="${line.separator}
+            name="install.templates"
+            value="${line.separator}
   &lt;copy dir=&quot;${package.root}/install/templates&quot; todir=&quot;${env.templates}&quot; overwrite=&quot;true&quot; /&gt;${line.separator}
   &lt;config addtemplate=&quot;nuxeo-labs-okta&quot; /&gt;${line.separator}"/>
       </then>
