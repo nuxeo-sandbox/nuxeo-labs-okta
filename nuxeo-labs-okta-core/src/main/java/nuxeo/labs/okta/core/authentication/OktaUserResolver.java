@@ -11,6 +11,7 @@ import org.opensaml.saml2.core.Attribute;
 import org.opensaml.xml.XMLObject;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -82,11 +83,11 @@ public class OktaUserResolver extends AbstractUserResolver {
     }
 
     protected void addToGroups(Attribute attribute, NuxeoPrincipal principal) {
-        List<String> groups = principal.getGroups();
+        List<String> groups = new ArrayList<>();
         for (XMLObject value : attribute.getAttributeValues()) {
             String group = value.getDOM().getTextContent();
             if ("Everyone".equals(group)) {
-                // do nothing
+                // Do nothing, this is a Group automatically created by Okta.
             } else {
                 groups.add(group);
             }
