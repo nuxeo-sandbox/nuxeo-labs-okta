@@ -24,7 +24,8 @@ public class OktaUserResolver extends AbstractUserResolver {
     private static final Log log = LogFactory.getLog(OktaUserResolver.class);
 
     @Override
-    public void init(Map<String, String> map) {    }
+    public void init(Map<String, String> map) {
+    }
 
     @Override
     public String getLoginName(SAMLCredential samlCredential) {
@@ -71,7 +72,7 @@ public class OktaUserResolver extends AbstractUserResolver {
             userDoc = userManager.getBareUserModel();
             userDoc.setPropertyValue(userManager.getUserIdField(), credential.getNameID().getValue());
             userDoc = userManager.createUser(userDoc);
-            userDoc = updateUserInfo(userDoc,credential);
+            userDoc = updateUserInfo(userDoc, credential);
         } catch (NuxeoException e) {
             log.error(
                     "Error while creating user " +
@@ -80,7 +81,7 @@ public class OktaUserResolver extends AbstractUserResolver {
         }
         return userDoc;
     }
-    
+
     @Override
     public DocumentModel updateUserInfo(DocumentModel user, SAMLCredential credential) {
         try {
