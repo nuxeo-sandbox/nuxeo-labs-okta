@@ -24,6 +24,26 @@ public class OktaUserResolver extends AbstractUserResolver {
     private static final Log log = LogFactory.getLog(OktaUserResolver.class);
 
     @Override
+    public void init(Map<String, String> map) {    }
+
+    @Override
+    public String getLoginName(SAMLCredential samlCredential) {
+        return null;
+    }
+
+    @Override
+    public String findOrCreateNuxeoUser(SAMLCredential userInfo) {
+        String username = findNuxeoUser(userInfo);
+        if (username == null) {
+            DocumentModel userDoc = createNuxeoUser(userInfo);
+            return userDoc.getId();
+        } else {
+            UserManager userManager = Framework.getLocalService(UserManager.class);
+            updateUserInfo(userManager.getUserModel(username), userInfo);
+            return username;
+        }
+    }
+
     public String findNuxeoUser(SAMLCredential credential) {
         try {
             UserManager userManager = Framework.getLocalService(UserManager.class);
@@ -44,11 +64,23 @@ public class OktaUserResolver extends AbstractUserResolver {
         }
     }
 
-    @Override
-    public String getLoginName(SAMLCredential samlCredential) {
-        return null;
+    public DocumentModel createNuxeoUser(SAMLCredential credential) {
+        DocumentModel userDoc;
+        try {
+            UserManager userManager = Framework.getService(UserManager.class);
+            userDoc = userManager.getBareUserModel();
+            userDoc.setPropertyValue(userManager.getUserIdField(), credential.getNameID().getValue());
+            userDoc = userManager.createUser(userDoc);
+            userDoc = updateUserInfo(userDoc,credential);
+        } catch (NuxeoException e) {
+            log.error(
+                    "Error while creating user " +
+                            credential.getNameID().getValue() + "in UserManager", e);
+            return null;
+        }
+        return userDoc;
     }
-
+    
     @Override
     public DocumentModel updateUserInfo(DocumentModel user, SAMLCredential credential) {
         try {
