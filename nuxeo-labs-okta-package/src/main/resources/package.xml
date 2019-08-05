@@ -2,7 +2,7 @@
 <package type="addon" name="nuxeo-labs-okta" version="@VERSION@">
   <title>Nuxeo labs okta</title>
   <description>
-    <p>A simple mapper for Nuxeo/Okta integration.</p>
+    <p>A sample mapper for Nuxeo/Okta integration.</p>
   </description>
   <!-- <home-page>http://doc.nuxeo.com/</home-page> -->
   <vendor>Nuxeo</vendor>
