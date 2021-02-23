@@ -17,7 +17,9 @@ The mapping is "fixed"; it assumes the only fields that will be used from Okta a
 * email (also used for the user ID)
 * firstName
 * lastName
-* groups
+* groups **
+
+** The `groups` field should be defined as a custom profile property on the Okta side; this is not a reference to Okta's groups feature. Define an array field and place the Nuxeo group names here.
 
 # Build
 
