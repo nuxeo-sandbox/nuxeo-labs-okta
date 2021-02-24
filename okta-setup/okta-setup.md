@@ -46,6 +46,7 @@ The plugin requires the attributes “firstName”, “lastName”, “email”,
 * **Audience URI (SP Entity ID)** `https://yourdemo.cloud.nuxeo.com/nuxeo/ui`
 * **Attribute Statements**
   * (you will have 4 total)
+
 | Name | Name format | Value |
 | - | - | - |
 | lastName | Unspecified | user.lastName |
