@@ -27,7 +27,7 @@ The mapping is "fixed"; it assumes the only fields that will be used from Okta a
 git clone https://github.com/nuxeo-sandbox/nuxeo-labs-okta
 cd nuxeo-labs-okta
 mvn clean install
-# or 
+# or
 mvn clean install -DskipTests
 ```
 
@@ -41,7 +41,9 @@ Add a `userResolverClass` parameter to your authenticators contribution in Nuxeo
 <parameter name="userResolverClass">nuxeo.labs.okta.core.authentication.OktaUserResolver</parameter>
 ```
 
-A full Studio contribution example is provided in the "studio" folder. 
+A full Studio contribution example is provided in the [studio](studio) folder. There is an icon included as well, add this to **Resources -> Images** in Studio Modeler.
+
+If you need help setting up Okta, please see [okta-setup.md](okta-setup/okta-setup.md).
 
 # Support
 
