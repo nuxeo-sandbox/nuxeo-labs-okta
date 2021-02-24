@@ -43,7 +43,7 @@ Add a `userResolverClass` parameter to your authenticators contribution in Nuxeo
 
 A full Studio contribution example is provided in the [studio](studio) folder. There is an icon included as well, add this to **Resources -> Images** in Studio Modeler.
 
-If you need help setting up Okta, please see [okta-setup.md](okta-setup/okta-setup.md).
+If you need help setting up Okta, please see [okta-setup.md](okta-setup/README.md).
 
 # Support
 
