@@ -60,7 +60,7 @@ The plugin requires the attributes “firstName”, “lastName”, “email”,
 
 ### Update Nuxeo Configuration
 
-The plugin includes the [necessary XML contribution](../studio/contrib.xml) for Okta login. You need to update the URI in the **parameter** property named `metadata`. To get he necessary value:
+The plugin includes the [necessary XML contribution](../studio/contrib.xml) for Okta login. You need to update the URI in the **parameter** property named `metadata`. To get the necessary value:
 
 * In Okta UI go to the Application you created
 * Open the **Sign On** tab
@@ -73,9 +73,9 @@ The plugin includes the [necessary XML contribution](../studio/contrib.xml) for 
 
 Tip: you will need to restart the server after updating for this to work; Hot Reload is not supported for `authenitcators` contributions.
 
-### Add Applixation for Users
+### Add Application for Users
 
-Okta allows you to assign applications to users or groups. You can of course confifgure this however you want but the easiest way to make sure all the users you create have access to Nuxeo is to add the App to the `Everyone` group in Okta:
+Okta allows you to assign applications to users and/or groups. You can of course configure this however, you want but the easiest way to make sure all the users you create have access to Nuxeo is to add the App to the `Everyone` group in Okta:
 
 * **Directory -> Groups**
 * Open `Everyone`
@@ -97,14 +97,11 @@ Warning: do not create these users in Studio.
 * Uncheck `User must change password on first login`
 * Click **Save** (or **Save and Add Another** if you have more users to create)
 
-Warning: make sure the user is "Active" in Okta. You can check this in the directory under the **Status** column:
-![status](status.png)
-
-Once the users are created, you still need to add a password.
-
 ## Tips
 
+* If you find you can't log in with one of the users, make sure the user is "Active" in Okta. You can check this in the directory under the **Status** column:
+![status](status.png)
 * Don't use the Okta Developer account email address as the email for any Okta user. This way you can avoid confusion switching between the developer console and the end-user experience.
 * Be careful to avoid mixing different Okta accounts in the same browser. For example, say you are logged into your Okta developer account in your browser session. Then you open a notification email from Nuxeo. The Okta login will fail and you'll have an error during your demo. When in doubt, use a separate browser session (or use incognito windows) for *each* Okta user.
-* If you need to show MFA in your demo, the safest way is to choose a single user specifically for your MFA demo (so that you don't need to do MFA for every single user). You can add multifactor options under **Security -> Multifactor**. Note that you can make them optional, assign them only to specific users, etc. by editing the policy using the **Factor Enrollment** tab.
+* If you need to show MFA in your demo, the safest way is to choose a single user specifically for your MFA demo (so that you don't need to do MFA for every single user). You can add multifactor options under **Security -> Multifactor**. Note that you can make MFA optional, assign it only to specific users, etc. by editing the policy using the **Factor Enrollment** tab.
 
