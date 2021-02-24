@@ -8,7 +8,7 @@ This document covers the steps necessary to configure Okta to work with Nuxeo (v
 
 You will need an email address in order to set up an Okta developer account. You will also need separate email addresses in order to create Okta users. Note that with a gmail account you can use gmail aliases for each Okta user (e.g. mydemo+bob@gmail.com, mydemo+jane@gmail.com, etc.)
 
-Important note: you may need to use the “Classic” UI in Okta in order to create an Application that uses SAML ([reference](https://support.okta.com/help/s/article/Why-can-t-I-add-a-SAML-Application-with-an-Okta-Developer-account?language=en_US)).
+Important note: you may need to use the “Classic UI" in Okta in order to create an Application that uses SAML 2.0 ([reference](https://support.okta.com/help/s/article/Why-can-t-I-add-a-SAML-Application-with-an-Okta-Developer-account?language=en_US)).
 
 ![Classic UI](classic.png)
 
@@ -46,6 +46,7 @@ The plugin requires the attributes “firstName”, “lastName”, “email”,
 * **Audience URI (SP Entity ID)** `https://yourdemo.cloud.nuxeo.com/nuxeo/ui`
 * **Attribute Statements**
   * (you will have 4 total)
+
     Name | Name format | Value
     - | - | -
     lastName | Unspecified | user.lastName
