@@ -47,12 +47,12 @@ The plugin requires the attributes “firstName”, “lastName”, “email”,
 * **Attribute Statements**
   * (you will have 4 total)
 
-| Name | Name format | Value |
-| - | - | - |
-| lastName | Unspecified | user.lastName |
-| firstName | Unspecified | user.firstName |
-| email | Unspecified | user.email |
-| groups | Unspecified | user.groups |
+    | Name | Name format | Value |
+    | - | - | - |
+    | lastName | Unspecified | user.lastName |
+    | firstName | Unspecified | user.firstName |
+    | email | Unspecified | user.email |
+    | groups | Unspecified | user.groups |
 
 * Click **Next**
 * Select `I'm an Okta customer adding an internal app`
