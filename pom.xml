@@ -23,6 +23,7 @@
 
   <modules>
     <module>nuxeo-labs-okta-core</module>
+    <module>nuxeo-labs-okta-package</module>
   </modules>
 
   <scm />
@@ -38,6 +39,11 @@
       <dependency>
         <groupId>nuxeo.labs.okta</groupId>
         <artifactId>nuxeo-labs-okta-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>nuxeo.labs.okta</groupId>
+        <artifactId>nuxeo-labs-okta-package</artifactId>
         <version>${project.version}</version>
       </dependency>
     </dependencies>
