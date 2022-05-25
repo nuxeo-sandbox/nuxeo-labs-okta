@@ -21,17 +21,27 @@
     <nuxeo.target.version>2021.18</nuxeo.target.version>
   </properties>
 
-  <modules></modules>
+  <modules>
+    <module>nuxeo-labs-okta-core</module>
+  </modules>
 
-  <scm></scm>
-  <licenses></licenses>
-  <mailingLists></mailingLists>
-  <issueManagement></issueManagement>
-  <ciManagement></ciManagement>
-  <developers></developers>
-  <distributionManagement></distributionManagement>
+  <scm />
+  <licenses />
+  <mailingLists />
+  <issueManagement />
+  <ciManagement />
+  <developers />
+  <distributionManagement />
 
-  <dependencyManagement />
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>nuxeo.labs.okta</groupId>
+        <artifactId>nuxeo-labs-okta-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
 
   <repositories>
     <repository>
