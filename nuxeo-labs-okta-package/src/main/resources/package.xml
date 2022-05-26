@@ -1,6 +1,6 @@
 <!-- See documentation at http://doc.nuxeo.com/x/HgIz -->
-<package type="addon" name="nuxeo-labs-okta-package" version="@VERSION@">
-  <title>Nuxeo labs okta package</title>
+<package type="addon" name="nuxeo-labs-okta" version="@VERSION@">
+  <title>Nuxeo labs okta</title>
   <description>
     <p>A sample mapper for Nuxeo/Okta integration.</p>
   </description>

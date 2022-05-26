@@ -11,7 +11,7 @@
 
   <artifactId>nuxeo-labs-okta-package</artifactId>
   <packaging>zip</packaging>
-  <name>Nuxeo labs okta package</name>
+  <name>Nuxeo labs okta</name>
 
   <dependencies>
     <!-- Base distribution(s) for the MP -->
