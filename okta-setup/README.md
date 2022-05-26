@@ -6,23 +6,17 @@ This document covers the steps necessary to configure Okta to work with Nuxeo (v
 
 ## Prerequisites
 
-You will need an email address in order to set up an Okta developer account. You will also need separate email addresses in order to create Okta users. Note that with a gmail account you can use gmail aliases for each Okta user (e.g. mydemo+bob@gmail.com, mydemo+jane@gmail.com, etc.)
-
-Important note: you may need to use the “Classic UI" in Okta in order to create an Application that uses SAML 2.0 ([reference](https://support.okta.com/help/s/article/Why-can-t-I-add-a-SAML-Application-with-an-Okta-Developer-account?language=en_US)).
-
-![Classic UI](classic.png)
-
-These instructions assume you are using the "Classic UI".
+You will need an email address in order to set up an Okta developer account. You will also need separate email addresses in order to create Okta users. Note that with a GMail account you can use gmail aliases for each Okta user (e.g. mydemo+bob@gmail.com, mydemo+jane@gmail.com, etc.)
 
 ## Setup
 
-Sign Up for a Free Okta Developer Account at https://developer.okta.com/
+Sign Up for a Free Okta Developer Account at https://developer.okta.com/. Tip: if using a GMail account, be sure to sign up using Google, Okta will not allow you to enter a GMail address in the "Work Email" field.
 
 ### Set up Okta User Profile
 
 The plugin requires the attributes “firstName”, “lastName”, “email”, and “groups”. The first three are default attributes, but “groups” is a custom attribute that you must add, it is *not* based on Okta groups.
 
-* In the Okta UI go to **Directory** -> **User Profile Editor**
+* In the Okta UI go to **Directory** -> **Profile Editor**
 * Select the `User (default)` user profile
 * Add a new attribute
 * **Data type** `string array`
@@ -33,12 +27,9 @@ The plugin requires the attributes “firstName”, “lastName”, “email”,
 ### Create Application in Okta
 
 * Go to **Applications -> Applications**
-* Click **Add Application**
-  * This opens the Okta Application directory but we will create a new app...
-* Click **Create New App**
-* **Platform** `Web`
+* Click **Create App Integration**
 * **Sign on method** `SAML 2.0`
-* Click **Create**
+* Click **Next**
 * For **App name** keep in mind this value will be displayed in the sign on dialog, choose something useful
 * Same for **App logo**, choose something nice for the demo
 * Click **Next**

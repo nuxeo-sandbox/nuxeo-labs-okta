@@ -5,25 +5,19 @@
   <parent>
     <groupId>nuxeo.labs.okta</groupId>
     <artifactId>nuxeo-labs-okta-parent</artifactId>
-    <version>10.10-SNAPSHOT</version>
+    <version>2021.0.0-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>nuxeo-labs-okta-package</artifactId>
   <packaging>zip</packaging>
-  <name>Nuxeo labs okta</name>
+  <name>Nuxeo labs okta package</name>
 
   <dependencies>
     <!-- Base distribution(s) for the MP -->
     <dependency>
       <groupId>org.nuxeo.ecm.distribution</groupId>
       <artifactId>nuxeo-nxr-server</artifactId>
-      <type>zip</type>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.ecm.distribution</groupId>
-      <artifactId>nuxeo-nxr-jsf-ui</artifactId>
       <type>zip</type>
       <scope>provided</scope>
     </dependency>
