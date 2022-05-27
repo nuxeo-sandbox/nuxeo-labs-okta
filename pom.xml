@@ -10,7 +10,7 @@
 
   <groupId>nuxeo.labs.okta</groupId>
   <artifactId>nuxeo-labs-okta-parent</artifactId>
-  <version>2021.0.0-SNAPSHOT</version>
+  <version>2021.0.0</version>
   <name>Nuxeo labs okta parent</name>
   <description>Parent project for Nuxeo Labs Okta Mapper.</description>
   <packaging>pom</packaging>
