@@ -6,7 +6,7 @@
   <parent>
     <groupId>nuxeo.labs.okta</groupId>
     <artifactId>nuxeo-labs-okta-parent</artifactId>
-    <version>2021.0.0</version>
+    <version>2021.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>nuxeo-labs-okta-core</artifactId>
   <name>Nuxeo labs okta core</name>
