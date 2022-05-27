@@ -70,8 +70,8 @@ Okta allows you to assign applications to users and/or groups. You can of course
 
 * **Directory -> Groups**
 * Open `Everyone`
-* Click **Manage Applications**
-* Click the **Assign** button next to the Application you created
+* Click the **Applications** tab
+* Click the **Assign applications** button and assign the application you created
 
 ### Create Okta Users
 
@@ -79,17 +79,23 @@ Warning: do not create these users in Studio.
 
 * In Okta UI open **Directory -> People**
 * Click **Add person**
-* Enter **First Name**, **Last Name**, **Username** (must be an email address), and set up **Groups** using the **Add Another** button.
-  * Note that each group name must match the group id in Nuxeo.
-  * Warning: don't use Okta groups, you're setting up the custom attribute that you added earlier
+* Enter **First Name**, **Last Name**, **Username** (must be an email address)
 ![groups](groups.png)
-* **Password** `Set by admin`
+* Check **I will set password**
 * Enter the password
 * Uncheck `User must change password on first login`
 * Click **Save** (or **Save and Add Another** if you have more users to create)
+* Edit each user
+* Select the **Profile** tab
+* Click **Edit**
+* Scroll down the "Groups" (this is our custom field) and click the **Add Another** button
+* Add the Nuxeo groups for this user
+  * Note that each group name must match the group **id** in Nuxeo, not the label.
+  * Warning: don't use Okta groups, you're setting up the custom attribute that you added earlier
 
 ## Tips
 
+* A CORS contribution is required in order for the login to work. There is [an example](https://doc.nuxeo.com/nxdoc/saml-20-authentication/#integrating-the-nuxeo-platform-with-a-saml-20-idp) in the documentation but I was unable to get that one to work (it would not allow normal login to Nuxeo); feel free to experiment.
 * If you find you can't log in with one of the users, make sure the user is "Active" in Okta. You can check this in the directory under the **Status** column:
 ![status](status.png)
 * Don't use the Okta Developer account email address as the email for any Okta user. This way you can avoid confusion switching between the developer console and the end-user experience.
