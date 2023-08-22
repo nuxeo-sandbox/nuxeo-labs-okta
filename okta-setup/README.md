@@ -60,7 +60,7 @@ The plugin includes the [necessary XML contribution](../studio/contrib.xml) for 
 * Note the **Identity Provider Single Sign-On URL**. for example:
   * `https://dev-xxxxxx.okta.com/app/dev-xxxxxx_myapp_1/randomstring/sso/saml`
 * Update the URI in the XML contrib to match the above values, for example:
-  * `https://dev-xxxxxx.oktapreview.com/app/randomstring/sso/saml/metadata`
+  * `https://dev-xxxxxx.okta.com/app/randomstring/sso/saml/metadata`
 
 Tip: you will need to restart the server after updating for this to work; Hot Reload is not supported for `authenitcators` contributions.
 
@@ -80,7 +80,6 @@ Warning: do not create these users in Studio.
 * In Okta UI open **Directory -> People**
 * Click **Add person**
 * Enter **First Name**, **Last Name**, **Username** (must be an email address)
-![groups](groups.png)
 * Check **I will set password**
 * Enter the password
 * Uncheck `User must change password on first login`
