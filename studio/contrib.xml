@@ -11,7 +11,7 @@ understanding which components this contrib depends on. -->
     <parameters>
       <parameter name="name">Okta</parameter>
       <!-- Uri of the metadata -->
-      <parameter name="metadata">https://dev-237248.oktapreview.com/app/exk9bj4shmRfiHcoK0h7/sso/saml/metadata</parameter>
+      <parameter name="metadata">https://dev-237248.okta.com/app/exk9bj4shmRfiHcoK0h7/sso/saml/metadata</parameter>
       <!-- Request timeout in seconds -->
       <parameter name="timeout">5</parameter>
       <parameter name="icon">/img/okta.png</parameter>
