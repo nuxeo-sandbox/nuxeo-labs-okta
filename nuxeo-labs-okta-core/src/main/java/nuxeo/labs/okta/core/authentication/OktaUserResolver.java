@@ -55,7 +55,7 @@ public class OktaUserResolver extends AbstractUserResolver {
                 return null;
             }
             // Note: assumes the first user is the one we want.
-            return (String) users.get(0).getPropertyValue(userManager.getUserIdField());
+            return (String) users.getFirst().getPropertyValue(userManager.getUserIdField());
 
         } catch (NuxeoException e) {
             log.error(
@@ -92,10 +92,10 @@ public class OktaUserResolver extends AbstractUserResolver {
             for (Attribute attribute : credential.getAttributes()) {
                 switch (attribute.getName()) {
                     case "firstName":
-                        principal.setFirstName(attribute.getAttributeValues().get(0).getDOM().getTextContent());
+                        principal.setFirstName(attribute.getAttributeValues().getFirst().getDOM().getTextContent());
                         break;
                     case "lastName":
-                        principal.setLastName(attribute.getAttributeValues().get(0).getDOM().getTextContent());
+                        principal.setLastName(attribute.getAttributeValues().getFirst().getDOM().getTextContent());
                         break;
                     case "groups":
                         addToGroups(attribute, principal);
@@ -119,11 +119,10 @@ public class OktaUserResolver extends AbstractUserResolver {
         List<String> groups = new ArrayList<>();
         for (XMLObject value : attribute.getAttributeValues()) {
             String group = value.getDOM().getTextContent();
-            if ("Everyone".equals(group)) {
-                // Do nothing, this is a Group automatically created by Okta.
-            } else {
+            if (!"Everyone".equals(group)) {
                 groups.add(group);
             }
+            // Do nothing if Everyone, this is a Group automatically created by Okta.
         }
         principal.setGroups(groups);
     }
