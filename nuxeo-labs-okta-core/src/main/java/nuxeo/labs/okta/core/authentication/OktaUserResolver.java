@@ -7,8 +7,8 @@ import org.nuxeo.ecm.platform.auth.saml.SAMLCredential;
 import org.nuxeo.ecm.platform.auth.saml.user.AbstractUserResolver;
 import org.nuxeo.ecm.platform.usermanager.UserManager;
 import org.nuxeo.runtime.api.Framework;
-import org.opensaml.saml2.core.Attribute;
-import org.opensaml.xml.XMLObject;
+import org.opensaml.core.xml.XMLObject;
+import org.opensaml.saml.saml2.core.Attribute;
 
 import java.io.Serializable;
 import java.util.ArrayList;
